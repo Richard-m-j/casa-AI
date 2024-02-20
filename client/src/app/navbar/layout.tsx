@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { Center, Tooltip, UnstyledButton, Stack } from "@mantine/core";
+import { Tooltip, UnstyledButton, Stack } from "@mantine/core";
 import {
   IconHome2,
   IconGauge,
@@ -30,10 +30,7 @@ function NavbarLink({
   collapsed,
 }: NavbarLinkProps) {
   return (
-    <Tooltip
-      label={collapsed ? (label && !active ? label : "") : label}
-      position='right'
-      transitionProps={{ duration: 0 }}>
+    <Tooltip label={""} position='right' transitionProps={{ duration: 0 }}>
       <UnstyledButton
         onClick={onClick}
         className={`w-12 h-12 flex items-center rounded-md 
