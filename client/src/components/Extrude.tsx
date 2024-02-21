@@ -8,7 +8,7 @@ const fillMaterial = new THREE.MeshBasicMaterial({ color: "#F3FBFB" });
 const stokeMaterial = new THREE.LineBasicMaterial({
   color: "#00A5E6",
 });
-const renderSVG = (extrusion: number, svg: string) => {
+const renderSVG = (extrusion: number,svg: string) => {
   const loader = new SVGLoader();
   const svgData = loader.parse(svg);
   const svgGroup = new THREE.Group();
@@ -89,9 +89,9 @@ const setupScene = (container: HTMLDivElement) => {
 
   renderer.setSize(window.innerWidth, window.innerHeight);
   scene.add(ambientLight, pointLight);
-  camera.position.z = 50;
-  camera.position.x = 50;
-  camera.position.y = 50;
+  camera.position.z = 400;
+  camera.position.x = 400;
+  camera.position.y = 400;
   controls.enablePan = false;
 
   container.appendChild(renderer.domElement);
@@ -107,7 +107,7 @@ const setupScene = (container: HTMLDivElement) => {
 
 // svg.js
 const svg = `<svg version="1.0" xmlns="http://www.w3.org/2000/svg"
- width="300.000000pt" height="296.000000pt" viewBox="0 0 300.000000 296.000000"
+ width="300.000000" height="296.000000" viewBox="0 0 300.000000 296.000000"
  preserveAspectRatio="xMidYMid meet">
 <metadata>
 Created by potrace 1.10, written by Peter Selinger 2001-2011
@@ -158,11 +158,17 @@ c165 2 301 5 304 7 2 2 1 11 -2 20 -6 13 -43 15 -285 15 l-278 0 -3 350 -2
 const Extrude = () => {
   useEffect(() => {
     const container = document.createElement("div");
+    container.classList.add('flex', 'items-center');
+    container.style.position = 'absolute'; // Set position to fixed
+    container.style.top = '30%'; // Align to the top
+    container.style.right = '300px';
+    container.style.width = '60vw';
+    container.style.height = '50vh';
     document.body.appendChild(container);
 
     // Initialize Three.js objects here
     const scene = setupScene(container);
-    const { object, update } = renderSVG(20, svg);
+    const { object, update } = renderSVG(20,svg);
     scene.add(object);
 
     return () => {
@@ -177,3 +183,5 @@ const Extrude = () => {
 };
 
 export default Extrude;
+
+

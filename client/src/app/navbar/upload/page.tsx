@@ -7,11 +7,11 @@ const Page = () => {
   return (
     <MantineProvider>
       <div className='flex justify-center items-center h-screen'>
-        <div className='grid grid-cols-2 gap-8'>
-          <div className='col-span-1'>
+        <div className='flex gap-8'>
+          <div>
             <DropzoneButton />
           </div>
-          <div className='col-span-1'>
+          <div style={{ width: '50px', height: 'px' }}>
             <Extrude />
           </div>
         </div>
