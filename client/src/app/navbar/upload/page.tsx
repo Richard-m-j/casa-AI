@@ -11,7 +11,7 @@ const Page = () => {
           <div>
             <DropzoneButton />
           </div>
-          <div style={{ width: '50px', height: 'px' }}>
+          <div className='w-20 border-8'>
             <Extrude />
           </div>
         </div>

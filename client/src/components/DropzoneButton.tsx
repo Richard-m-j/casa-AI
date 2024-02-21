@@ -36,19 +36,18 @@ export function DropzoneButton() {
           </Text>
         </div>
         <Dropzone.Idle>
-          <div className='flex items-center justify-center'>
+          <div className='flex flex-col items-center justify-center'>
             <IconCloudUpload className='w-12 h-12' stroke={1.2} />
+            <Button
+              className='w-40 left-1/2 bottom-5 bg-[#B69865] text-white rounded-md'
+              size='md'
+              radius='xl'
+              onClick={() => openRef.current?.()}>
+              Upload Plan
+            </Button>
           </div>
         </Dropzone.Idle>
       </Dropzone>
-
-      <Button
-        className='absolute w-40 left-1/2 transform -translate-x-1/2 -bottom-5 bg-[#B69865] text-white rounded-md'
-        size='md'
-        radius='xl'
-        onClick={() => openRef.current?.()}>
-        Upload Plan
-      </Button>
     </div>
   );
 }
