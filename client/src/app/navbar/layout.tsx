@@ -83,7 +83,7 @@ export default function NavbarMinimal({ children }: NavbarMinimalProps) {
     <MantineProvider>
       <div className='flex'>
         <div
-          className={`h-screen flex flex-col justify-between border-r bg-[#f0ecd7] border-[#B69865] pt-14 pl-2 pb-10 ${
+          className={`z-10 h-screen flex flex-col justify-between border-r bg-[#f0ecd7] border-[#B69865] pt-14 pl-2 pb-10 ${
             collapsed ? "w-44" : "w-20"
           }`}>
           <div className='flex flex-col justify-center'>
@@ -103,7 +103,7 @@ export default function NavbarMinimal({ children }: NavbarMinimalProps) {
             />
           </Stack>
         </div>
-        <div>{children}</div>
+        <div className=' -z-10'>{children}</div>
       </div>
     </MantineProvider>
   );
