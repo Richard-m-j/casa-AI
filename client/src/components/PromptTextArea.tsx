@@ -4,8 +4,8 @@ import { Textarea, Button, IconButton } from "@material-tailwind/react";
  
 export function PromptTextarea() {
   return (
-    <div className="relative w-[32rem]">
-      <Textarea variant="static" placeholder="Your Comment" rows={8} />
+    <div className="w-[32rem]">
+      <Textarea variant="static" placeholder="Enter a prompt" rows={8} />
       <div className="flex w-full justify-between py-1.5">
         <IconButton variant="text" color="blue-gray" size="sm" placeholder>
           <svg
