@@ -3,7 +3,7 @@ import Extrude from "./Extrude";
 
 export function ImageViewer() {
   return (
-    <div>
+    <div className='border-8'>
       <Extrude />
     </div>
   );
