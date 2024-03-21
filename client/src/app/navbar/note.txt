@@ -1,3 +1,0 @@
-//dark theme icon colors
-bg-[#B69865]
-text-[#FFBC11]
