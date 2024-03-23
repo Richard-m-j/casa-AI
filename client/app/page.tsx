@@ -8,27 +8,15 @@ import {
   useQuery,
 } from "convex/react";
 
-import { Link } from "@/components/typography/link";
-import { SignInButton, SignUpButton, UserButton } from "@clerk/clerk-react";
-import { StickyHeader } from "@/components/layout/sticky-header";
 import useStoreUserEffect from "@/hooks/useStoreUserEffect";
 import Image from "next/image";
 import { api } from "@/convex/_generated/api";
+import { StickyNavbar } from "@/components/ui/sticky-navbar";
 
 export default function Home() {
   return (
-    <>
-      <StickyHeader className="px-4 py-2">
-        <div className="flex justify-between items-center px-4">
-          CasaAI
-          <div className="flex justify-around gap-10">
-            <Link href="/dashboard">Dashboard</Link>
-            <Link href="/settings">Settings</Link>
-            <Link href="/about">About</Link>
-          </div>
-          <SignInAndSignUpButtons />
-        </div>
-      </StickyHeader>
+    <div className=" overflow-x-hidden">
+      <StickyNavbar />
       <main className="container flex gap-8 pt-10">
         <div className="flex-col max-w-[33rem]">
           <h1 className="text-[3.75rem] font-extrabold my-8 leading-[5rem]">
@@ -97,27 +85,10 @@ export default function Home() {
           />
         </div>
       </main>
-    </>
-  );
-}
-
-function SignInAndSignUpButtons() {
-  return (
-    <div className="flex gap-4">
-      <Authenticated>
-        <UserButton afterSignOutUrl="#" />
-      </Authenticated>
-      <Unauthenticated>
-        <SignInButton mode="modal">
-          <Button className="bg-gradient-to-br bg-[#FFBC11] hover:bg-[#FFBC11] text-white rounded h-10">Sign in</Button>
-        </SignInButton>
-        <SignUpButton mode="modal">
-          <Button className="bg-gradient-to-br bg-[#FFBC11] hover:bg-[#FFBC11] text-white rounded h-10">Sign up</Button>
-        </SignUpButton>
-      </Unauthenticated>
     </div>
   );
 }
+
 
 function SignedInContent() {
   const store = useStoreUserEffect();
