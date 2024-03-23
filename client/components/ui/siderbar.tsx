@@ -14,6 +14,8 @@ import {
   PowerIcon,
 } from "@heroicons/react/24/solid";
 import Link from "next/link";
+import { UserButton } from "@clerk/clerk-react";
+import { Authenticated } from "convex/react";
 
 export function DefaultSidebar() {
   return (
@@ -23,52 +25,59 @@ export function DefaultSidebar() {
           CASA AI
         </Typography>
       </div>
-      <List>
-        <Link href='application/generate'>
+      <div className='flex flex-col'>
+        <List>
+          <Link href='/application/generate'>
+            <ListItem>
+              <ListItemPrefix>
+                <PencilSquareIcon className='h-5 w-5' />
+              </ListItemPrefix>
+              Generate
+            </ListItem>
+          </Link>
+          <Link href='/application/3D'>
+            <ListItem>
+              <ListItemPrefix>
+                <CubeIcon className='h-5 w-5' />
+              </ListItemPrefix>
+              View 3D
+            </ListItem>
+          </Link>
+          <Link href='/application/history'>
+            <ListItem>
+              <ListItemPrefix>
+                <ClockIcon className='h-5 w-5' />
+              </ListItemPrefix>
+              History
+            </ListItem>
+          </Link>
+          <Link href='/application/gallery'>
+            <ListItem>
+              <ListItemPrefix>
+                <PhotoIcon className='h-5 w-5' />
+              </ListItemPrefix>
+              Gallery
+            </ListItem>
+          </Link>
           <ListItem>
             <ListItemPrefix>
-              <PencilSquareIcon className='h-5 w-5' />
+              <Cog6ToothIcon className='h-5 w-5' />
             </ListItemPrefix>
-            Generate
+            Settings
           </ListItem>
-        </Link>
-        <Link href='application/3D'>
           <ListItem>
             <ListItemPrefix>
-              <CubeIcon className='h-5 w-5' />
+              <PowerIcon className='h-5 w-5' />
             </ListItemPrefix>
-            View 3D
+            Log Out
           </ListItem>
-        </Link>
-        <Link href='application/history'>
-          <ListItem>
-            <ListItemPrefix>
-              <ClockIcon className='h-5 w-5' />
-            </ListItemPrefix>
-            History
-          </ListItem>
-        </Link>
-        <Link href='application/gallery'>
-          <ListItem>
-            <ListItemPrefix>
-              <PhotoIcon className='h-5 w-5' />
-            </ListItemPrefix>
-            Gallery
-          </ListItem>
-        </Link>
-        <ListItem>
-          <ListItemPrefix>
-            <Cog6ToothIcon className='h-5 w-5' />
-          </ListItemPrefix>
-          Settings
-        </ListItem>
-        <ListItem>
-          <ListItemPrefix>
-            <PowerIcon className='h-5 w-5' />
-          </ListItemPrefix>
-          Log Out
-        </ListItem>
-      </List>
+        </List>
+        <List>
+          <Authenticated>
+            <UserButton afterSignOutUrl='/' />
+          </Authenticated>
+        </List>
+      </div>
     </Card>
   );
 }
