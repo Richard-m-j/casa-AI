@@ -2,11 +2,13 @@
 
 import { DefaultSidebar } from "@/components/ui/siderbar";
 
-export default function AppLayout() {
+export default function AppLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex">
-        <DefaultSidebar/>
-        <div></div>
-    </div>
+    <body className="flex">
+      <div className="flex">
+        <DefaultSidebar />
+        <main className="flex-grow">{children}</main>
+      </div>
+    </body>
   );
 }
