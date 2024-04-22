@@ -5,7 +5,7 @@ import json
 import base64
 from PIL import Image
 from io import BytesIO  
-
+from outline import outline
 app = Flask(__name__)
 CORS(app)
 
@@ -43,6 +43,8 @@ def get_image():
         # Save the image to a file
         image.save("D:\\Softwares\\Codes\\Hackathons\\CONVEX\\casa-AI\\client\\public\\plan.png")
         print("Image saved as plan.png")
+        outline()
+        print("Image outlined as plan.svg")
     else:
         print("Error:", response.status_code)
         print("Response:")
