@@ -1,11 +1,26 @@
 "use client";
 
 import { Textarea, Button, IconButton } from "@material-tailwind/react";
- 
+import { set } from "date-fns";
+import { useState } from "react";
+
 export function PromptTextarea() {
+  const [prompt, setPrompt] = useState("");
+
+  const handleGenerate = () => {
+    //function call to send data to server
+  };
+
   return (
     <div className="w-[32rem]">
-      <Textarea variant="static" placeholder="Enter a prompt" rows={8} />
+      <Textarea
+        variant="static"
+        placeholder="Enter a prompt"
+        rows={8}
+        onChange={(event) => {
+          setPrompt(event.target.value);
+        }}
+      />
       <div className="flex w-full justify-between py-1.5">
         <IconButton variant="text" color="blue-gray" size="sm" placeholder="">
           <svg
@@ -24,10 +39,21 @@ export function PromptTextarea() {
           </svg>
         </IconButton>
         <div className="flex gap-2">
-          <Button size="sm" color="red" variant="text" className="rounded-md" placeholder={""}>
+          <Button
+            size="sm"
+            color="red"
+            variant="text"
+            className="rounded-md"
+            placeholder={""}
+          >
             Cancel
           </Button>
-          <Button size="sm"  className="rounded-md bg-[#DA9732] text-white"placeholder={""}>
+          <Button
+            size="sm"
+            className="rounded-md bg-[#DA9732] text-white"
+            placeholder={""}
+            onClick={handleGenerate}
+          >
             Generate
           </Button>
         </div>

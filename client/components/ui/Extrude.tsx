@@ -1,8 +1,8 @@
 "use client";
 import { useEffect } from "react";
 import * as THREE from "three";
-import { OrbitControls } from "three/examples/jsm/Addons.js";
-import { SVGLoader } from "three/examples/jsm/Addons.js";
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js"; // Corrected import path
+import { SVGLoader } from "three/examples/jsm/loaders/SVGLoader.js"; // Corrected import path
 
 const fillMaterial = new THREE.MeshBasicMaterial({ color: "#F3FBFB" });
 const stokeMaterial = new THREE.LineBasicMaterial({

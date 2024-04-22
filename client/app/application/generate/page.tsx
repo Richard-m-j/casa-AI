@@ -15,8 +15,8 @@ import {
 
 const Page = () => {
   return (
-    <div className="">
-      <div className="px-16 py-12 w-[44vw] gap-10">
+    <div className="grid grid-rows-2 grid-cols-2 gap-40 px-10 py-10">
+      <div className="px-16 py-12 w-[44vw] gap-8 grid grid-rows-2">
         <Card>
           <div className="flex-col p-4">
             <p className="pb-6">Enter Carpet Area</p>
@@ -27,13 +27,11 @@ const Page = () => {
             </div>
           </div>
         </Card>
-      </div>
-      <div className="px-16 py-8 flex h-[42vh] gap-64">
         <Card>
-          <div className="p-4">
-            <PromptTextarea />
-          </div>
+          <PromptTextarea />
         </Card>
+      </div>
+      <div className="row-span-1 col-span-1">
         <CardsCarousel />
       </div>
     </div>
