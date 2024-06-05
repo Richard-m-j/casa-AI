@@ -2,17 +2,6 @@
 
 Welcome to CasaAI's GitHub repository! This project leverages advanced generative AI models and 3D visualization techniques to revolutionize the architectural design process. CasaAI aims to provide personalized, eco-friendly, and efficient housing designs that cater to individual preferences while promoting environmental responsibility.
 
-## Table of Contents
-
-- [Introduction](#introduction)
-- [Features](#features)
-- [Installation](#installation)
-- [Usage](#usage)
-- [System Architecture](#system-architecture)
-- [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
-
 ## Introduction
 
 CasaAI integrates cutting-edge AI technology to generate architectural plans and visualize them in 3D. Users can input textual descriptions or images to create and customize architectural designs, which are then rendered in real-time 3D for an immersive experience.
