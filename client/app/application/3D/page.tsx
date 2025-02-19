@@ -7,11 +7,13 @@ const Page = () => {
   return (
     <div className="flex justify-center items-center h-screen">
       <div className="grid grid-rows-1 grid-cols-2 gap-8">
-        <div className="col-span-1">
+        <div className="col-span-1 w-[30rem] px-16 py-10">
           <DropZoneButton />
         </div>
-        <div style={{ width: "50px", height: "50px" }} col-span-1>
-          <Extrude />
+        <div className="col-span-1">
+          <div style={{ width: "100px", height: "400px" }}>
+            <Extrude />
+          </div>
         </div>
       </div>
     </div>

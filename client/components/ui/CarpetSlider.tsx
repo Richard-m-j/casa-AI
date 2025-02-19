@@ -12,6 +12,7 @@ export function CarpetSlider() {
         min={100}
         onChange={(event) => {
           setArea(Math.round(parseInt(event.target.value) / 100) * 100);
+          console.log(area);
         }}
       />
     </div>

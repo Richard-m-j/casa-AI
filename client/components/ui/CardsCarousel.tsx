@@ -1,6 +1,10 @@
 "use client";
 
 import { Carousel, IconButton } from "@material-tailwind/react";
+import Image from "next/image";
+import Img1 from "@/public/images/casaHouse3_20230913050406_e000196_01.png";
+import Img2 from "@/public/images/casaHouse3_20230913050406_e000196_01.png";
+import Img3 from "@/public/images/casaHouse3_20230913051208_e000217_01.png";
 
 export function CardsCarousel() {
   return (
@@ -9,7 +13,7 @@ export function CardsCarousel() {
       prevArrow={({ handlePrev }) => (
         <IconButton
           variant="text"
-          color="white"
+          color="orange"
           size="lg"
           onClick={handlePrev}
           className="!absolute top-2/4 left-4 -translate-y-2/4"
@@ -33,7 +37,7 @@ export function CardsCarousel() {
       nextArrow={({ handleNext }) => (
         <IconButton
           variant="text"
-          color="white"
+          color="orange"
           size="lg"
           onClick={handleNext}
           className="!absolute top-2/4 !right-4 -translate-y-2/4"
@@ -56,18 +60,13 @@ export function CardsCarousel() {
       )}
     >
       <div className="h-full w-full">
-        <img
-          src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80"
-          alt="image 1"
-          className="h-full w-full object-cover"
-        />
+        <Image src={Img1} alt="image 1" className="h-full w-full" />
       </div>
       <div className="h-full w-full">
-        <img
-          src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
-          alt="image 2"
-          className="h-full w-full object-cover"
-        />
+        <Image src={Img2} alt="image 1" className="h-full w-full" />
+      </div>
+      <div className="h-full w-full">
+        <Image src={Img3} alt="image 1" className="h-full w-full" />
       </div>
       <div className="h-full w-full">
         <img
